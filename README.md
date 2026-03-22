@@ -1,4 +1,4 @@
-# UPI Fraud Detection System — GenAI Powered
+# Gen AI Powered UPI Fraud Detection System and Analysis
 
 ## Overview
 An end-to-end machine learning pipeline to detect fraudulent financial transactions using real-world credit card transaction data. Built to simulate fraud detection systems used by fintech companies like Razorpay, Paytm, and HDFC Bank. Integrates XGBoost-based fraud detection with GenAI-powered explainability to generate human-readable fraud risk reports.
