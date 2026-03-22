@@ -1,3 +1,112 @@
-# Frauds-analytics-
+# UPI Fraud Detection System — GenAI Powered
 
-"While fraud transactions do show volume drops, they lack the consistent cyclical pattern seen in legitimate transactions, suggesting automated or geographically dispersed fraud activity rather than human-driven behavior."
+## Overview
+An end-to-end machine learning pipeline to detect fraudulent financial transactions using real-world credit card transaction data. Built to simulate fraud detection systems used by fintech companies like Razorpay, Paytm, and HDFC Bank. Integrates XGBoost-based fraud detection with GenAI-powered explainability to generate human-readable fraud risk reports.
+
+---
+
+## Dashboard Preview
+![Dashboard](dashboard.png)
+
+---
+
+## Key Results
+
+| Model | Fraud Recall | Precision | F1 Score |
+|-------|-------------|-----------|----------|
+| Random Forest | 81% | 81% | 81% |
+| **XGBoost** | **89%** | **73%** | **80%** |
+
+**XGBoost chosen as final model — catches 89% of all fraud cases**
+
+---
+
+## 💡 Key Findings from EDA
+- **Fraudsters deliberately keep transaction amounts small** — 50% of fraud transactions are under ₹9.25, deliberately staying below detection thresholds
+- **Fraud peaks at 9 PM** — highest fraud activity at hour 21, when monitoring may be lower but users are still active
+- **Fraud has no consistent time pattern** — unlike normal transactions which follow human sleep/wake cycles, fraud occurs randomly suggesting automated bots or geographically dispersed actors
+- **V14 is the strongest fraud signal** — Feature importance analysis identified V14 (22%), V10 (11%), and V4 (11%) as primary fraud indicators
+- **Amount alone cannot detect fraud** — correlation analysis showed Amount has very weak relationship with fraud class, confirming sophisticated fraud avoidance strategies
+
+---
+
+## Tech Stack
+- **Python** — Pandas, NumPy, Scikit-learn, XGBoost, Imbalanced-learn
+- **Machine Learning** — Random Forest, XGBoost, SMOTE
+- **GenAI** — OpenAI API for fraud explainability reports
+- **Visualization** — Seaborn, Matplotlib, Power BI Dashboard
+- **Data** — 284,807 real transactions, 492 confirmed fraud cases
+
+---
+
+## Pipeline
+```
+Raw Data → EDA → Feature Engineering → SMOTE Balancing → Model Training → Evaluation → GenAI Explanation → Dashboard
+```
+
+**Step 1 — Exploratory Data Analysis**
+- Transaction amount distribution by class
+- Time-based fraud pattern analysis
+- Feature correlation heatmap
+- Class imbalance visualization
+
+**Step 2 — Data Preparation**
+- StandardScaler on Amount and Time features
+- Train/Test split (80/20) with stratification
+- SMOTE applied on training data only to handle 0.17% fraud minority class
+
+**Step 3 — Model Building**
+- Random Forest (100 estimators)
+- XGBoost classifier
+- Evaluation using Precision, Recall, F1 — prioritizing Recall
+
+**Step 4 — Feature Importance**
+- Top fraud signals: V14, V10, V4, V17, V12
+- V14 alone accounts for 22% of model decisions
+
+**Step 5 — GenAI Explainability**
+- XGBoost flags suspicious transactions with probability score
+- OpenAI API generates human-readable explanation of why transaction is suspicious
+- Actionable recommendations generated automatically
+
+**Step 6 — Power BI Dashboard**
+- KPI cards — total transactions, fraud cases, fraud flagged
+- Fraud by transaction amount bucket
+- Fraud activity by hour of day
+- Model performance comparison — XGBoost vs Random Forest
+
+---
+
+## Business Impact
+- Model detects **89% of fraudulent transactions**
+- Out of 98 fraud cases in test data — **87 correctly flagged**
+- Only **11 fraud cases missed**
+- At average fraud value of ₹122 — model potentially prevents **₹10,614 in losses per test batch**
+- Fraud peaks at **9 PM** — actionable insight for enhanced monitoring windows
+- False alarm rate kept low — only 18 normal transactions incorrectly flagged
+---
+
+## 🔮 Future Improvements
+- Real-time prediction API using Flask/FastAPI
+- SHAP values for model explainability
+- Neural network comparison
+- Live UPI transaction simulation
+- Anomaly detection using Isolation Forest
+
+---
+
+## Made by:
+
+**Krish Kamboj**
+- LinkedIn: [linkedin.com/in/krish-kamboj-618845224](https://www.linkedin.com/in/krish-kamboj-618845224/)
+- GitHub: [github.com/kaykay4424](https://github.com/kaykay4424/kaykay4424)
+- Email: Krishkamboj09876@gmail.com
+
+---
+
+## Dataset
+
+UCI Machine Learning Repository — Credit Card Fraud Detection Dataset
+Provided by Worldline and the Machine Learning Group of ULB
+
+---
