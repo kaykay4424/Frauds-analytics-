@@ -6,9 +6,10 @@ An end-to-end machine learning pipeline to detect fraudulent financial transacti
 ---
 
 ## Dashboard Preview
-![Dashboard](dashboard.png)
+
 
 ---
+<img width="1305" height="740" alt="Dashboard" src="https://github.com/user-attachments/assets/8094e513-5484-4ca7-849d-2ef7acc669a3" />
 
 ## Key Results
 
