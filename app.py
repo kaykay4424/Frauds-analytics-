@@ -6,27 +6,16 @@ import pickle
 
 
 # ---- CONFIG ----
-st.set_page_config(page_title="K's UPI Fraud Intelligence.", layout="wide")
-st.title("K's UPI Fraud Intelligence.")
-st.markdown("Upload transaction data and ask business questions about fraud patterns")
+st.set_page_config(page_title="K's UPI Fraud Intelligence", page_icon="🔍", layout="wide")
+
+# ---- CUSTOM CSS ----
 st.markdown("""
 <style>
-    /* Main background */
     .stApp {
         background-color: #0a0a0a;
         color: #00ff41;
         font-family: 'Courier New', monospace;
     }
-    
-    /* Header */
-    .main-header {
-        text-align: center;
-        padding: 20px;
-        border-bottom: 2px solid #00ff41;
-        margin-bottom: 30px;
-    }
-    
-    /* KPI cards */
     .kpi-card {
         background-color: #0d1a0d;
         border: 1px solid #00ff41;
@@ -35,21 +24,18 @@ st.markdown("""
         text-align: center;
         margin: 10px;
     }
-    
     .kpi-value {
         font-size: 36px;
         font-weight: bold;
         color: #00ff41;
+        text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
     }
-    
     .kpi-label {
         font-size: 12px;
         color: #7dff7d;
         text-transform: uppercase;
         letter-spacing: 2px;
     }
-    
-    /* Input box */
     .stTextInput > div > div > input {
         background-color: #0d1a0d;
         color: #00ff41;
@@ -57,8 +43,6 @@ st.markdown("""
         border-radius: 4px;
         font-family: 'Courier New', monospace;
     }
-    
-    /* Answer box */
     .answer-box {
         background-color: #0d1a0d;
         border: 1px solid #00ff41;
@@ -68,9 +52,20 @@ st.markdown("""
         margin-top: 20px;
         color: #00ff41;
         font-family: 'Courier New', monospace;
+        animation: fadeIn 0.5s ease-in;
     }
-
-    /* Sample questions */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .main-header h1::after {
+        content: '_';
+        animation: blink 1s infinite;
+    }
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
     .sample-question {
         background-color: #0d1a0d;
         border: 1px solid #1a4d1a;
@@ -81,37 +76,11 @@ st.markdown("""
         font-size: 13px;
         display: inline-block;
     }
-
-    /* Divider */
-    hr {
-        border-color: #1a4d1a;
-    }
-
-    /* Hide streamlit branding */
+    hr { border-color: #1a4d1a; }
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
-
-#___________________
-/* Scanning line effect */
-.stApp::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #00ff41;
-    animation: scan 3s linear infinite;
-    opacity: 0.3;
-    z-index: 9999;
-}
-
-@keyframes scan {
-    0% { top: 0%; }
-    100% { top: 100%; }
-}
 #__________________________
 # ---- GROQ CLIENT ----
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
