@@ -217,6 +217,10 @@ st.markdown("""
     <span class="ticker-down">FRAUD RATE: 0.17%</span>
     <span>|</span>
     <span>POWERED BY GROQ LLM</span>
+    <span>|</span>
+    <a href="mailto:Krishkamboj09876@gmail.com" style="color: #00a8e8; text-decoration: none;">✉ EMAIL</a>
+    <span>|</span>
+    <a href="https://www.linkedin.com/in/krish-kamboj-618845224/" style="color: #00a8e8; text-decoration: none;">in LINKEDIN</a>
 </div>
 """, unsafe_allow_html=True)
 
@@ -228,7 +232,7 @@ st.markdown("""
             KRISH KAMBOJ · FRAUD ANALYTICS
         </div>
         <div style="font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: 1px;">
-            K"s Fraud Insights Terminal
+            K's Fraud Insights Terminal
         </div>
     </div>
     <div style="text-align: right; font-family: IBM Plex Mono; font-size: 11px; color: #888;">
