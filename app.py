@@ -17,11 +17,11 @@ st.markdown("""
 /* Top ticker bar */
 .ticker-bar {
     background-color: #1a1a1a;
-    border-bottom: 1px solid #ff6600;
+    border-bottom: 1px solid #00a8e8;
     padding: 6px 20px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    color: #ff6600;
+    color: #00a8e8;
     letter-spacing: 1px;
     display: flex;
     gap: 30px;
@@ -32,13 +32,13 @@ st.markdown("""
     display: inline;
 }
 
-.ticker-up { color: #00c851; }
+.ticker-up { color: #00d4aa; }
 .ticker-down { color: #ff4444; }
 
 /* Header */
 .terminal-header {
     background-color: #1a1a1a;
-    border-left: 4px solid #ff6600;
+    border-left: 4px solid #00a8e8;
     padding: 15px 25px;
     margin-bottom: 25px;
     display: flex;
@@ -57,7 +57,7 @@ st.markdown("""
 .kpi-card {
     background-color: #1a1a1a;
     border: 1px solid #2a2a2a;
-    border-top: 2px solid #ff6600;
+    border-top: 2px solid #00a8e8;
     padding: 18px;
 }
 
@@ -79,7 +79,7 @@ st.markdown("""
 
 .kpi-sub {
     font-size: 11px;
-    color: #00c851;
+    color: #00d4aa;
     margin-top: 4px;
     font-family: 'IBM Plex Mono', monospace;
 }
@@ -87,11 +87,11 @@ st.markdown("""
 /* Section headers */
 .section-header {
     background-color: #1a1a1a;
-    border-left: 3px solid #ff6600;
+    border-left: 3px solid #00a8e8;
     padding: 8px 15px;
     font-size: 11px;
     font-family: 'IBM Plex Mono', monospace;
-    color: #ff6600;
+    color: #00a8e8;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -110,7 +110,7 @@ st.markdown("""
     cursor: pointer;
 }
 
-.query-chip:hover { border-color: #ff6600; color: #ff6600; }
+.query-chip:hover { border-color: #00a8e8; color: #00a8e8; }
 
 /* Input */
 .stTextInput > div > div > input {
@@ -124,14 +124,14 @@ st.markdown("""
 }
 
 .stTextInput > div > div > input:focus {
-    border-color: #ff6600 !important;
+    border-color: #00a8e8 !important;
 }
 
 /* Answer panel */
 .answer-panel {
     background-color: #1a1a1a;
     border: 1px solid #2a2a2a;
-    border-left: 3px solid #00c851;
+    border-left: 3px solid #00d4aa;
     padding: 20px;
     margin-top: 15px;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -144,7 +144,7 @@ st.markdown("""
 .answer-query {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    color: #ff6600;
+    color: #00a8e8;
     letter-spacing: 1px;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -224,7 +224,7 @@ st.markdown("""
 st.markdown("""
 <div class="terminal-header">
     <div>
-        <div style="font-size: 11px; color: #ff6600; letter-spacing: 3px; font-family: IBM Plex Mono; margin-bottom: 5px;">
+        <div style="font-size: 11px; color: #00a8e8; letter-spacing: 3px; font-family: IBM Plex Mono; margin-bottom: 5px;">
             KRISH KAMBOJ · FRAUD ANALYTICS
         </div>
         <div style="font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: 1px;">
@@ -232,7 +232,7 @@ st.markdown("""
         </div>
     </div>
     <div style="text-align: right; font-family: IBM Plex Mono; font-size: 11px; color: #888;">
-        <div style="color: #00c851; font-size: 13px; font-weight: 600;">● LIVE</div>
+        <div style="color: #00d4aa; font-size: 13px; font-weight: 600;">● LIVE</div>
         <div>XGBOOST + LLM</div>
     </div>
 </div>
