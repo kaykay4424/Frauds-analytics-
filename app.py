@@ -163,51 +163,7 @@ st.markdown("""
     margin: 20px 0;
 }
 
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
-</style>
-.reach-out {
-    margin-left: auto;
-    position: relative;
-    cursor: pointer;
-}
 
-.reach-out-btn {
-    color: #00a8e8;
-    letter-spacing: 2px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.reach-out-dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 25px;
-    background-color: #1a1a1a;
-    border: 1px solid #00a8e8;
-    padding: 10px 15px;
-    z-index: 9999;
-    min-width: 200px;
-}
-
-.reach-out:hover .reach-out-dropdown {
-    display: block;
-}
-
-.reach-out-dropdown a {
-    display: block;
-    color: #e0e0e0;
-    text-decoration: none;
-    padding: 5px 0;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-.reach-out-dropdown a:hover {
-    color: #00a8e8;
-}
 """, unsafe_allow_html=True)
 
 # ---- GROQ CLIENT ----
