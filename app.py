@@ -9,7 +9,7 @@ from groq import Groq
 
 .reach-out-btn {
     color: #00a8e8;
-    letter-spacing: 2px;
+    
     cursor: pointer;
     font-weight: 600;
 }
