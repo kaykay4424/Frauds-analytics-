@@ -7,7 +7,7 @@ import pickle
 
 # ---- CONFIG ----
 st.set_page_config(page_title="K's UPI Fraud Intelligence.", layout="wide")
-st.title("🔍 UPI Fraud Detection — Business Intelligence")
+st.title("K's UPI Fraud Intelligence.")
 st.markdown("Upload transaction data and ask business questions about fraud patterns")
 
 # ---- GROQ CLIENT ----
