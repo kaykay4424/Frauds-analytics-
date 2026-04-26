@@ -93,6 +93,50 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+/* Blinking cursor effect */
+.main-header h1::after {
+    content: '_';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Scanning line effect */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ff41;
+    animation: scan 3s linear infinite;
+    opacity: 0.3;
+    z-index: 9999;
+}
+
+@keyframes scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+}
+
+/* Glowing text effect on KPI values */
+.kpi-value {
+    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+/* Fade in animation for answer box */
+.answer-box {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 # ---- GROQ CLIENT ----
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
