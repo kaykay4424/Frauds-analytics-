@@ -259,13 +259,6 @@ st.markdown("""
     <span class="ticker-down">FRAUD RATE: 0.17%</span>
     <span>|</span>
     <span>POWERED BY GROQ LLM</span>
-<div class="reach-out">
-    <span class="reach-out-btn">[ REACH OUT ▾ ]</span>
-    <div class="reach-out-dropdown">
-        <a href="mailto:Krishkamboj09876@gmail.com">✉ Krishkamboj09876@gmail.com</a>
-        <a href="https://www.linkedin.com/in/krish-kamboj-618845224/" target="_blank">in LinkedIn Profile</a>
-    </div>
-</div>
 """, unsafe_allow_html=True)
 
 # ---- HEADER ----
