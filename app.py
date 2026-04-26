@@ -9,6 +9,89 @@ import pickle
 st.set_page_config(page_title="K's UPI Fraud Intelligence.", layout="wide")
 st.title("K's UPI Fraud Intelligence.")
 st.markdown("Upload transaction data and ask business questions about fraud patterns")
+st.markdown("""
+<style>
+    /* Main background */
+    .stApp {
+        background-color: #0a0a0a;
+        color: #00ff41;
+        font-family: 'Courier New', monospace;
+    }
+    
+    /* Header */
+    .main-header {
+        text-align: center;
+        padding: 20px;
+        border-bottom: 2px solid #00ff41;
+        margin-bottom: 30px;
+    }
+    
+    /* KPI cards */
+    .kpi-card {
+        background-color: #0d1a0d;
+        border: 1px solid #00ff41;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        margin: 10px;
+    }
+    
+    .kpi-value {
+        font-size: 36px;
+        font-weight: bold;
+        color: #00ff41;
+    }
+    
+    .kpi-label {
+        font-size: 12px;
+        color: #7dff7d;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    /* Input box */
+    .stTextInput > div > div > input {
+        background-color: #0d1a0d;
+        color: #00ff41;
+        border: 1px solid #00ff41;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+    }
+    
+    /* Answer box */
+    .answer-box {
+        background-color: #0d1a0d;
+        border: 1px solid #00ff41;
+        border-left: 4px solid #00ff41;
+        border-radius: 4px;
+        padding: 20px;
+        margin-top: 20px;
+        color: #00ff41;
+        font-family: 'Courier New', monospace;
+    }
+
+    /* Sample questions */
+    .sample-question {
+        background-color: #0d1a0d;
+        border: 1px solid #1a4d1a;
+        border-radius: 4px;
+        padding: 8px 15px;
+        margin: 5px;
+        color: #7dff7d;
+        font-size: 13px;
+        display: inline-block;
+    }
+
+    /* Divider */
+    hr {
+        border-color: #1a4d1a;
+    }
+
+    /* Hide streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)
 
 # ---- GROQ CLIENT ----
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
