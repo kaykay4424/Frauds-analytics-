@@ -1,9 +1,5 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 from groq import Groq
-import pickle
-
 
 # ---- CONFIG ----
 st.set_page_config(page_title="K's UPI Fraud Intelligence", page_icon="🔍", layout="wide")
@@ -85,7 +81,7 @@ st.markdown("""
 # ---- GROQ CLIENT ----
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-# ---- FRAUD SUMMARY (from our analysis) ----
+# ---- FRAUD SUMMARY ----
 fraud_summary = """
 Dataset analyzed: 284,807 UPI transactions
 Total fraud cases: 492 (0.17%)
@@ -101,12 +97,11 @@ Key insights:
 - Average fraud amount: 122 rupees vs 88 rupees for normal
 """
 
-# ---- AI ANSWER FUNCTION ----
+# ---- AI FUNCTION ----
 def answer_question(question):
     prompt = f"""
     You are a fraud analytics expert helping a business team understand their fraud detection results.
-    Answer the following question in simple, non-technical business language in 3-4 sentences.
-    Be specific and use the data provided.
+    Answer in simple non-technical business language in 3-4 sentences. Be specific.
     
     Fraud Detection Analysis:
     {fraud_summary}
@@ -119,24 +114,79 @@ def answer_question(question):
     )
     return response.choices[0].message.content
 
-# ---- UI ----
-st.divider()
+# ---- HEADER ----
+st.markdown("""
+<div class="main-header">
+    <h1 style="color: #00ff41; font-family: Courier New; letter-spacing: 4px;">
+        ⬡ UPI FRAUD INTELLIGENCE SYSTEM
+    </h1>
+    <p style="color: #7dff7d; font-size: 13px; letter-spacing: 2px;">
+        XGBOOST ML MODEL · GROQ LLM · REAL-TIME ANALYSIS
+    </p>
+</div>
+""", unsafe_allow_html=True)
 
-# KPI Cards
+# ---- KPI CARDS ----
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("Total Transactions", "284,807")
-col2.metric("Fraud Cases", "492", "0.17%")
-col3.metric("Fraud Recall", "89%", "XGBoost")
-col4.metric("Avg Fraud Amount", "₹122")
 
-st.divider()
+with col1:
+    st.markdown("""
+    <div class="kpi-card">
+        <div class="kpi-value">284,807</div>
+        <div class="kpi-label">Transactions Analyzed</div>
+    </div>""", unsafe_allow_html=True)
 
-# Chat
-st.subheader("💬 Ask a Business Question")
-question = st.text_input("Type your question:", placeholder="e.g. When should we increase fraud monitoring?")
+with col2:
+    st.markdown("""
+    <div class="kpi-card">
+        <div class="kpi-value">492</div>
+        <div class="kpi-label">Fraud Cases Detected</div>
+    </div>""", unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div class="kpi-card">
+        <div class="kpi-value">89%</div>
+        <div class="kpi-label">Fraud Recall Rate</div>
+    </div>""", unsafe_allow_html=True)
+
+with col4:
+    st.markdown("""
+    <div class="kpi-card">
+        <div class="kpi-value">₹122</div>
+        <div class="kpi-label">Avg Fraud Amount</div>
+    </div>""", unsafe_allow_html=True)
+
+st.markdown("<hr>", unsafe_allow_html=True)
+
+# ---- QUERY SECTION ----
+st.markdown("""
+<p style="color: #00ff41; font-family: Courier New; font-size: 18px; letter-spacing: 2px;">
+> QUERY INTERFACE
+</p>
+<p style="color: #7dff7d; font-size: 12px; letter-spacing: 1px;">TRY ASKING:</p>
+<span class="sample-question">When should we increase monitoring?</span>
+<span class="sample-question">What amount range is most risky?</span>
+<span class="sample-question">How accurate is the model?</span>
+<span class="sample-question">Should we block small transactions?</span>
+<br><br>
+""", unsafe_allow_html=True)
+
+# ---- CHAT ----
+if "history" not in st.session_state:
+    st.session_state.history = []
+
+question = st.text_input("", placeholder="Enter your business query here...")
 
 if question:
     with st.spinner("Analyzing..."):
         answer = answer_question(question)
-    st.success("**AI Analysis:**")
-    st.write(answer)
+    st.session_state.history.append((question, answer))
+
+for q, a in reversed(st.session_state.history):
+    st.markdown(f"""
+    <div class="answer-box">
+        <p style="color: #7dff7d; font-size: 12px; margin-bottom: 8px;">▶ QUERY: {q}</p>
+        <p style="color: #00ff41;">{a}</p>
+    </div><br>
+    """, unsafe_allow_html=True)
