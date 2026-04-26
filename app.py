@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from groq import Groq
 import pickle
-load_dotenv()
+
 
 # ---- CONFIG ----
 st.set_page_config(page_title="UPI Fraud Intelligence", page_icon="🔍", layout="wide")
