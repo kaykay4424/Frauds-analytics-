@@ -3,9 +3,6 @@ import pandas as pd
 import numpy as np
 from groq import Groq
 import pickle
-from dotenv import load_dotenv
-import os
-load_dotenv(r'C:\Users\kkris\Desktop\.env')
 load_dotenv()
 
 # ---- CONFIG ----
