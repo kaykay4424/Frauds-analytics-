@@ -300,4 +300,81 @@ st.markdown("""
 <div style="font-family: IBM Plex Mono; font-size: 10px; color: #444; text-align: center; padding: 10px;">
     FRAUD INTELLIGENCE TERMINAL · BUILT BY KRISH KAMBOJ · XGBOOST + GROQ LLM
 </div>
+.about-btn {
+    color: #00a8e8;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: #111;
+    border: 1px solid #00a8e8;
+    padding: 40px;
+    max-width: 550px;
+    width: 90%;
+    font-family: IBM Plex Sans;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.modal-sub {
+    font-size: 11px;
+    color: #00a8e8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-family: IBM Plex Mono;
+}
+
+.modal-body {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+.modal-stat {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 10px 0;
+    font-family: IBM Plex Mono;
+    font-size: 12px;
+}
+
+.modal-stat-label { color: #555; }
+.modal-stat-value { color: #fff; }
+
+.modal-close {
+    margin-top: 25px;
+    font-size: 11px;
+    color: #555;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-family: IBM Plex Mono;
+    text-align: right;
+}
+
+.modal-close:hover { color: #00a8e8; }
 """, unsafe_allow_html=True)
