@@ -18,7 +18,7 @@ from groq import Groq
     display: none;
     position: absolute;
     right: 0;
-    top: 25px;
+
     background-color: #1a1a1a;
     border: 1px solid #00a8e8;
     padding: 10px 15px;
