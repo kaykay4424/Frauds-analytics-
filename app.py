@@ -1,6 +1,48 @@
 import streamlit as st
 from groq import Groq
 
+.reach-out {
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.reach-out-btn {
+    color: #00a8e8;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reach-out-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    background-color: #1a1a1a;
+    border: 1px solid #00a8e8;
+    padding: 10px 15px;
+    z-index: 9999;
+    min-width: 200px;
+}
+
+.reach-out:hover .reach-out-dropdown {
+    display: block;
+}
+
+.reach-out-dropdown a {
+    display: block;
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.reach-out-dropdown a:hover {
+    color: #00a8e8;
+}
+    
 st.set_page_config(page_title="K's Fraud Intelligence Terminal", layout="wide")
 
 st.markdown("""
@@ -217,10 +259,12 @@ st.markdown("""
     <span class="ticker-down">FRAUD RATE: 0.17%</span>
     <span>|</span>
     <span>POWERED BY GROQ LLM</span>
-    <span>|</span>
-    <a href="mailto:Krishkamboj09876@gmail.com" style="color: #00a8e8; text-decoration: none;">✉ EMAIL</a>
-    <span>|</span>
-    <a href="https://www.linkedin.com/in/krish-kamboj-618845224/" style="color: #00a8e8; text-decoration: none;">in LINKEDIN</a>
+<div class="reach-out">
+    <span class="reach-out-btn">[ REACH OUT ▾ ]</span>
+    <div class="reach-out-dropdown">
+        <a href="mailto:Krishkamboj09876@gmail.com">✉ Krishkamboj09876@gmail.com</a>
+        <a href="https://www.linkedin.com/in/krish-kamboj-618845224/" target="_blank">in LinkedIn Profile</a>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
