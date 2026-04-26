@@ -1,7 +1,7 @@
 import streamlit as st
 from groq import Groq
 
-st.set_page_config(page_title="Fraud Intelligence Terminal", page_icon="K", layout="wide")
+st.set_page_config(page_title="K's Fraud Intelligence Terminal", layout="wide")
 
 st.markdown("""
 <style>
@@ -228,7 +228,7 @@ st.markdown("""
             KRISH KAMBOJ · FRAUD ANALYTICS
         </div>
         <div style="font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: 1px;">
-            UPI Fraud Detection Intelligence System
+            K"s Fraud Insights Terminal
         </div>
     </div>
     <div style="text-align: right; font-family: IBM Plex Mono; font-size: 11px; color: #888;">
