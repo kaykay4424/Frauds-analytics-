@@ -81,7 +81,7 @@ st.markdown("""
     footer {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
-#__________________________
+
 # ---- GROQ CLIENT ----
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
