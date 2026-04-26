@@ -20,7 +20,7 @@ from groq import Groq
     right: 0;
 
     background-color: #1a1a1a;
-    border: 1px solid #00a8e8;
+    
     padding: 10px 15px;
     z-index: 9999;
     min-width: 200px;
