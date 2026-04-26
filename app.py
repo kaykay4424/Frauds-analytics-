@@ -6,7 +6,7 @@ import pickle
 
 
 # ---- CONFIG ----
-st.set_page_config(page_title="UPI Fraud Intelligence", page_icon="🔍", layout="wide")
+st.set_page_config(page_title="K's UPI Fraud Intelligence.", layout="wide")
 st.title("🔍 UPI Fraud Detection — Business Intelligence")
 st.markdown("Upload transaction data and ask business questions about fraud patterns")
 
