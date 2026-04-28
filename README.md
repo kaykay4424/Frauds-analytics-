@@ -1,6 +1,6 @@
 #  Groq LLaMa 3.1-Integrated UPI Fraud Detection System and Analysis
 ---
-## LIVE APP: https://tinyurl.com/krishk1fraudetection
+## LIVE APP: https://7p8lx6ol5fet62k4xpmqfk.streamlit.app/#upi-fraud-intelligence-system
 ---
 ## Overview
 This end-to-end live Product fills the communication bridge between the messy technical data & nontechnical person, Where you can simply ask your business queries and get answers based on the accurate insights by Groq LLaMA 3.1 LLM.
