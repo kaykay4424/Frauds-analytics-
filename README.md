@@ -1,13 +1,12 @@
-# Gen AI Powered UPI Fraud Detection System and Analysis
-
+#  Groq LLaMa 3.1-Integrated UPI Fraud Detection System and Analysis
+---
+## LIVE APP: https://7p8lx6ol5fet62k4xpmqfk.streamlit.app/-/login?payload=MTc3NzM2NDk3NnxmSnZGRG5zaWFMTUZXV081N0NjTzdMdHJjOHBQbjhRVk1fSnJwOFNKTHpjVkdOSjNSMzlUd0VqSE5USmxIQmp3NXFsMUFabDJGdVdUVXpHSC0zRXJYT1F2emZWbGFvalRXOS1JYXd6RV9UcUtVRS1VbUZQWUlCVUUtU05pcC1aTVUxSU5Yb3dmNWdlVzZZbmVodnJkZFF3a1Z6NldsNkZvS0Uzb0NjNmNiVUc4NVJRS3BaNU41Z1BXaWtDa3Blai01UDc4aE5jMEh6T3BMV3VEc3FwOGhLbktQUFlXQ3N6SG9zZUZ2M2JpeElaU0ZYOWlKd0hjQUQyRklRR2JYOFBIT215ZXE3MGlhTXV0QWlCZ2xCUVcwSDlCT0I4QTk0bGtzLTNRbHlxV28zbXpndHZSUHFPT19QZTM5eG1aRm16WUl1TW1uN3ZyNnBmcC1maWt0OG9IM1RSaVZCckYxVEs1WmtPYWFCRUp2WWdnNXlYMGttN2J5dXFEYTRaU214c1RRODBuU0ZPZW9GYjNKODllVnowUnFNeVo5bVlNaWJPekhEUU5ZWVV2OGVqdWd5SlVSNE1tb2FDU1JFUGVZcXhRTk1nVmlvMDhVSUhoakd3M3RIdlVHdlpXeU93a3RtMGxQdmVhNkttNS11X0pmZHRkMU1yNmZTSnpoMGVidEpXQXZvS3VsQXNMYWJYNGFMNkUzMTZOOHN6MTNVcWczTTlQQ2treny_aMcB2PGXegrtmjyjcKYzPVuPXuzBrt_9gm9LqdzKow%3D%3D#upi-fraud-intelligence-system
+---
 ## Overview
-An end-to-end machine learning pipeline to detect fraudulent financial transactions using real-world credit card transaction data. Built to simulate fraud detection systems used by fintech companies like Razorpay, Paytm, and HDFC Bank. Integrates XGBoost-based fraud detection with GenAI-powered explainability to generate human-readable fraud risk reports.
-
+This end-to-end live Product fills the communication bridge between the messy technical data & nontechnical person, Where you can simply ask your business queries and get answers based on the accurate insights by Groq LLaMA 3.1 LLM.
 ---
 
 ## Dashboard Preview
-
-
 ---
 <img width="1305" height="740" alt="Dashboard" src="https://github.com/user-attachments/assets/8094e513-5484-4ca7-849d-2ef7acc669a3" />
 
@@ -22,7 +21,7 @@ An end-to-end machine learning pipeline to detect fraudulent financial transacti
 
 ---
 
-## 💡 Key Findings from EDA
+## Key Findings from EDA
 - **Fraudsters deliberately keep transaction amounts small** — 50% of fraud transactions are under ₹9.25, deliberately staying below detection thresholds
 - **Fraud peaks at 9 PM** — highest fraud activity at hour 21, when monitoring may be lower but users are still active
 - **Fraud has no consistent time pattern** — unlike normal transactions which follow human sleep/wake cycles, fraud occurs randomly suggesting automated bots or geographically dispersed actors
@@ -34,15 +33,15 @@ An end-to-end machine learning pipeline to detect fraudulent financial transacti
 ## Tech Stack
 - **Python** — Pandas, NumPy, Scikit-learn, XGBoost, Imbalanced-learn
 - **Machine Learning** — Random Forest, XGBoost, SMOTE
-- **GenAI** — OpenAI API for fraud explainability reports
+- **GenAI** — Groq LLaMA 3.1 for business intelligence query answering
+- **Frontend** — Streamlit with Bloomberg-style terminal UI
 - **Visualization** — Seaborn, Matplotlib, Power BI Dashboard
 - **Data** — 284,807 real transactions, 492 confirmed fraud cases
-
 ---
 
 ## Pipeline
 ```
-Raw Data → EDA → Feature Engineering → SMOTE Balancing → Model Training → Evaluation → GenAI Explanation → Dashboard
+Raw Data → EDA → Feature Engineering → SMOTE Balancing → Model Training → Evaluation → GenAI Explanation → Streamlit app → Dashboard
 ```
 
 **Step 1 — Exploratory Data Analysis**
@@ -65,16 +64,16 @@ Raw Data → EDA → Feature Engineering → SMOTE Balancing → Model Training 
 - Top fraud signals: V14, V10, V4, V17, V12
 - V14 alone accounts for 22% of model decisions
 
-**Step 5 — GenAI Explainability**
+**Step 5 — GenAI Business Intelligence Layer**
 - XGBoost flags suspicious transactions with probability score
-- OpenAI API generates human-readable explanation of why transaction is suspicious
-- Actionable recommendations generated automatically
+- Groq LLaMA 3.1 answers business questions in plain English
+- No technical knowledge required — just ask naturally
+- Bloomberg-style terminal UI for professional presentation
 
-**Step 6 — Power BI Dashboard**
-- KPI cards — total transactions, fraud cases, fraud flagged
-- Fraud by transaction amount bucket
-- Fraud activity by hour of day
-- Model performance comparison — XGBoost vs Random Forest
+**Step 6 — Deployment**
+- Live on Streamlit Cloud
+- Accessible via public link
+- Secure API key management via Streamlit secrets
 
 ---
 
@@ -87,8 +86,8 @@ Raw Data → EDA → Feature Engineering → SMOTE Balancing → Model Training 
 - False alarm rate kept low — only 18 normal transactions incorrectly flagged
 ---
 
-## 🔮 Future Improvements
-- Real-time prediction API using Flask/FastAPI
+## Future Improvements
+- Upload your own csv feature
 - SHAP values for model explainability
 - Neural network comparison
 - Live UPI transaction simulation
