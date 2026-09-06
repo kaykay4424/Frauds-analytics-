@@ -185,7 +185,6 @@ Key insights:
 - Average fraud amount: 122 rupees vs 88 rupees for normal
 """
 
-# ---- AI FUNCTION ----
 def answer_question(question):
     prompt = f"""
     You are a senior fraud analytics expert at a top financial institution.
@@ -198,7 +197,7 @@ def answer_question(question):
     Question: {question}
     """
     response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="",
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content
